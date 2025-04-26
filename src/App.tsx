@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Box, Container, Typography, Paper, Grid, Card, CardContent, CardHeader, IconButton, Tooltip } from '@mui/material';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Refresh as RefreshIcon, TrendingUp as TrendingUpIcon, TrendingDown as TrendingDownIcon, TrendingFlat as TrendingFlatIcon } from '@mui/icons-material';
-import * as d3 from 'd3';
+import { Box, Container } from '@mui/material';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import Simulator from './pages/Simulator';
