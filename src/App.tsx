@@ -8,11 +8,13 @@ import Home from './pages/Home';
 import Simulator from './pages/Simulator';
 import Documentation from './pages/Documentation';
 import customPalette from './theme/palette';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
     <ThemeProvider theme={customPalette}>
       <CssBaseline />
+      <Analytics />
       <Router>
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <Navigation />
