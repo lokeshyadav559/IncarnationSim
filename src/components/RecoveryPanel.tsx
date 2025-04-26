@@ -80,16 +80,21 @@ const RecoveryPanel: React.FC<RecoveryPanelProps> = ({ currentIncarnation, onRec
       </Typography>
       <Divider sx={{ mb: 2 }} />
 
-      <Tabs
-        value={selectedTab}
-        onChange={handleTabChange}
-        sx={{ mb: 2 }}
-      >
-        <Tab label="Complete Recovery" value="COMPLETE" />
-        <Tab label="Incomplete Recovery" value="INCOMPLETE" />
-        <Tab label="Point-in-Time Recovery" value="PITR" />
-        <Tab label="Flashback Recovery" value="FLASHBACK" />
-      </Tabs>
+      <Box sx={{ display: 'flex', justifyContent: { xs: 'flex-start', sm: 'center' } }}>
+        <Tabs
+          value={selectedTab}
+          onChange={handleTabChange}
+          sx={{ mb: 2, maxWidth: { xs: '100%', sm: 600 } }}
+          variant="scrollable"
+          scrollButtons="auto"
+          allowScrollButtonsMobile
+        >
+          <Tab label="Complete Recovery" value="COMPLETE" />
+          <Tab label="Incomplete Recovery" value="INCOMPLETE" />
+          <Tab label="Point-in-Time Recovery" value="PITR" />
+          <Tab label="Flashback Recovery" value="FLASHBACK" />
+        </Tabs>
+      </Box>
 
       <Grid container spacing={2}>
         {(selectedTab === 'PITR' || selectedTab === 'INCOMPLETE' || selectedTab === 'FLASHBACK') && (
@@ -102,6 +107,7 @@ const RecoveryPanel: React.FC<RecoveryPanelProps> = ({ currentIncarnation, onRec
                 value={targetTime}
                 onChange={(e) => setTargetTime(e.target.value)}
                 InputLabelProps={{ shrink: true }}
+                helperText="Optional: Specify a target time for recovery."
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -111,6 +117,7 @@ const RecoveryPanel: React.FC<RecoveryPanelProps> = ({ currentIncarnation, onRec
                 value={targetSCN}
                 onChange={(e) => setTargetSCN(e.target.value)}
                 type="number"
+                helperText="Optional: Specify a target SCN for recovery."
               />
             </Grid>
           </>
