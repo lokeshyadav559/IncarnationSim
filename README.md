@@ -1,41 +1,30 @@
-# Oracle Database Incarnation Simulator
+# Oracle Database Simulator
 
-A web-based simulator that demonstrates the fundamental process of Oracle database incarnation. This tool helps users understand how Oracle tracks and manages database versions through interactive visualization and simulation.
+A web-based simulator that demonstrates Oracle database concepts through interactive visualization. This tool helps users understand database incarnations and backup strategies through hands-on learning.
 
 ## Features
 
+### Incarnation Simulator
 - Interactive visualization of database incarnations with enhanced D3.js graphics
 - Real-time simulation of database changes with smooth animations
 - Step-by-step guides for common scenarios
 - Visual representation of incarnation history with parent-child relationships
 - Educational tooltips and comprehensive documentation
+
+### Backup Simulator
+- Interactive timeline visualization of backup operations
+- Support for various backup types (Full, Incremental, Differential, etc.)
+- Backup dependency tracking and validation
+- Retention policy management
+- Real-time backup status indicators
+- Detailed backup information on click
+
+### Common Features
 - Responsive design that adapts to different screen sizes
-
-### Visualization Features
-
-- **Interactive Graph**
-  - Dynamic node visualization with active/inactive state indicators
-  - Smooth animations for state transitions
-  - Hover effects with detailed information tooltips
-  - Clear visual hierarchy with color-coded nodes and connections
-
-- **Time-based Layout**
-  - Chronological arrangement of incarnations
-  - Formatted timestamps with precise time display
-  - Grid lines for better temporal reference
-  - Rotated axis labels for better readability
-
-- **Node Details**
-  - Color-coded status indicators (Active: Green, Inactive: Grey)
-  - Drop shadow effects for depth perception
-  - Smooth hover transitions
-  - Clear parent-child relationship indicators
-
-- **Tooltips**
-  - Detailed information on hover
-  - Smooth transitions and positioning
-  - Status-specific styling
-  - Comprehensive metadata display
+- Interactive elements with hover and click functionality
+- Real-time feedback on actions
+- Comprehensive documentation
+- Educational tooltips
 
 ## Getting Started
 
@@ -57,8 +46,12 @@ npm start
 src/
 ├── components/     # Reusable UI components
 │   ├── IncarnationGraph/    # D3.js visualization component
+│   ├── BackupTimeline/      # Backup timeline visualization
 │   └── ...
 ├── pages/         # Main application pages
+│   ├── Simulator/          # Incarnation simulator
+│   ├── BackupSimulator/    # Backup simulator
+│   └── ...
 ├── services/      # API and data services
 ├── types/         # TypeScript type definitions
 ├── utils/         # Utility functions
