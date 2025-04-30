@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Box,
   Typography,
-  Paper,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -17,12 +16,38 @@ const Documentation: React.FC = () => {
   return (
     <Box>
       <Typography variant="h4" component="h1" gutterBottom>
-        Oracle Database 19c Incarnation Documentation
+        Oracle Database 19c Documentation
       </Typography>
 
       <Alert severity="info" sx={{ mb: 3 }}>
-        This simulator demonstrates Oracle Database 19c incarnation concepts and scenarios.
+        This simulator demonstrates Oracle Database 19c concepts and scenarios through two interactive tools:
+        the Incarnation Simulator and the Backup Simulator.
       </Alert>
+
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography>About the Simulators</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography paragraph>
+            The Oracle Database Simulator provides two interactive learning tools:
+          </Typography>
+          <List>
+            <ListItem>
+              <ListItemText
+                primary="Incarnation Simulator"
+                secondary="Learn about database incarnations, RESETLOGS operations, and recovery scenarios through interactive visualization"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemText
+                primary="Backup Simulator"
+                secondary="Explore different backup strategies, understand backup dependencies, and learn about retention policies"
+              />
+            </ListItem>
+          </List>
+        </AccordionDetails>
+      </Accordion>
 
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -55,6 +80,77 @@ const Documentation: React.FC = () => {
               <ListItemText
                 primary="Control File"
                 secondary="The control file tracks the current incarnation and its parent"
+              />
+            </ListItem>
+          </List>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography>Backup Types and Strategies</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography paragraph>
+            Oracle Database supports various backup types, each serving different purposes:
+          </Typography>
+          <List>
+            <ListItem>
+              <ListItemText
+                primary="Full Backup"
+                secondary="A complete backup of all datafiles in the database"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemText
+                primary="Incremental Backup"
+                secondary="Level 0: Baseline full backup. Level 1: Changes since last Level 0 or Level 1"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemText
+                primary="Differential vs Cumulative"
+                secondary="Differential: Changes since last backup. Cumulative: Changes since last Level 0"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemText
+                primary="Archivelog Backup"
+                secondary="Backup of archived redo logs for point-in-time recovery"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemText
+                primary="Control File Backup"
+                secondary="Backup of the database control file"
+              />
+            </ListItem>
+          </List>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography>Using the Simulators</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <List>
+            <ListItem>
+              <ListItemText
+                primary="Incarnation Simulator"
+                secondary="Create new incarnations, perform RESETLOGS operations, and explore recovery scenarios"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemText
+                primary="Backup Simulator"
+                secondary="Create different types of backups, manage retention policies, and understand backup dependencies"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemText
+                primary="Interactive Features"
+                secondary="Hover over elements for tooltips, click for detailed information, and get real-time feedback"
               />
             </ListItem>
           </List>

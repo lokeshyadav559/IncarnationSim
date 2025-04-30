@@ -11,7 +11,6 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  Divider,
   useMediaQuery,
 } from '@mui/material';
 import { AddCircle, Replay, SaveAlt } from '@mui/icons-material';

@@ -7,7 +7,7 @@ const Navigation: React.FC = () => {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Oracle Incarnation Simulator
+          Oracle Database Simulator
         </Typography>
         <Box>
           <Button
@@ -22,7 +22,14 @@ const Navigation: React.FC = () => {
             component={RouterLink}
             to="/simulator"
           >
-            Simulator
+            Incarnation
+          </Button>
+          <Button
+            color="inherit"
+            component={RouterLink}
+            to="/backup-simulator"
+          >
+            Backup
           </Button>
           <Button
             color="inherit"

@@ -1,6 +1,6 @@
 {
-  "short_name": "Oracle Incarnation Simulator",
-  "name": "Oracle Database Incarnation Simulator",
+  "short_name": "Oracle Simulator",
+  "name": "Oracle Database Simulator",
   "icons": [
     {
       "src": "favicon.ico",

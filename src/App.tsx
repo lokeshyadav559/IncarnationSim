@@ -7,12 +7,15 @@ import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import Simulator from './pages/Simulator';
 import Documentation from './pages/Documentation';
+import BackupSimulator from './pages/BackupSimulator';
 import customPalette from './theme/palette';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
     <ThemeProvider theme={customPalette}>
       <CssBaseline />
+      <Analytics />
       <Router>
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <Navigation />
@@ -20,6 +23,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/simulator" element={<Simulator />} />
+              <Route path="/backup-simulator" element={<BackupSimulator />} />
               <Route path="/documentation" element={<Documentation />} />
             </Routes>
           </Container>

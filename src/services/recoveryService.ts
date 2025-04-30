@@ -1,4 +1,4 @@
-import { DatabaseIncarnation, RecoveryOptions, RecoveryResult, RecoveryType } from '../types/database';
+import { DatabaseIncarnation, RecoveryOptions, RecoveryResult } from '../types/database';
 
 export class RecoveryService {
   private static instance: RecoveryService;
