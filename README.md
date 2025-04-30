@@ -68,6 +68,7 @@ src/
 
 ## Graph Component Usage
 
+### Incarnation Graph
 ```typescript
 import { IncarnationGraph } from './components/IncarnationGraph';
 
@@ -87,6 +88,36 @@ interface DatabaseIncarnation {
     description?: string;
     // Additional metadata fields
   };
+}
+```
+
+### Backup Timeline
+```typescript
+import { BackupTimeline } from './components/BackupTimeline';
+
+// Example usage
+<BackupTimeline 
+  events={backupEvents}
+  onEventClick={handleEventClick}
+/>
+```
+
+The `BackupTimeline` component accepts the following props:
+
+```typescript
+interface BackupEvent {
+  id: string;
+  type: string;
+  timestamp: string;
+  details?: string;
+  expired?: boolean;
+  status?: 'in progress' | 'completed';
+  parentId?: string | null;
+}
+
+interface TimelineProps {
+  events: BackupEvent[];
+  onEventClick: (event: BackupEvent) => void;
 }
 ```
 
