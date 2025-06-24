@@ -1,14 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:18-alpine'
-      args  '-u root:root' 
-    }
-  }
+  agent any
 
   // Poll GitHub every 5 minutes (or set up a webhook later)
   triggers {
-    pollSCM('H/5 * * * *')
+    pollSCM('H H * * *')
   }
 
   environment {
